@@ -1,0 +1,93 @@
+// addingmatrices.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};int b[3][3]={{1,2,3},{4,5,6},{7,8,9}},c[3][3],trp[3][3],temp,mul_mat[3][3]={0},k=0;
+	
+	printf("Matrix addition - The resultant matrix is: \n");
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];printf("%d ",c[i][j]);
+		}
+		printf("\n");
+	}
+	
+printf("Transpose of the matrix - The resultant matrix is: \n");
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			trp[j][i]=a[i][j];			
+		}
+	}
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			printf("%d ",trp[i][j]);		
+		}printf("\n");
+	}
+
+printf("multiplication of the 2 matrices - The resultant matrix is: \n");
+for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{temp=0;
+			for(int k=0;k<3;k++)
+			{
+				temp=temp+(a[i][k]*b[k][j]);
+			}
+			mul_mat[i][j]=temp;
+			printf("%d ",mul_mat[i][j]);
+		}
+		printf("\n");
+	}
+	
+printf("\npointers\n");
+	char char_ptr[10]="ABCDEFGHI";
+	printf("%x\n",*char_ptr);
+	int *int_ptr1; 
+	int_ptr1=(int* )char_ptr;
+	printf("%x\n",*int_ptr1);
+	
+printf("Sum of series using Pointers\n");	
+int arr[10],l;int *int_ptr=arr,sum=0;
+printf("Enter the number of elements:");scanf("%d",&l);
+printf("Enter the numbers:");
+for(int i=0;i<l;i++)
+{
+	scanf("%d",&arr[i]);
+	sum+=(*int_ptr);
+	int_ptr++;
+}
+printf("The sum of the series is:  %d\n",sum);
+
+	
+
+	///////////////////////////USING POINTERS/////////////////////////
+int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+	int b[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+	int c[3][3],trp[3][3];
+	int *ptr_a;
+	ptr_a=a;
+	int *ptr_b;
+	ptr_b=b;
+
+	printf("Matrix addition - The resultant matrix is: \n");
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+				c[i][j] = *ptr_a + *ptr_b;
+				printf("%d ",c[i][j]);
+				ptr_b++;
+		}ptr_a++;
+		printf("\n");
+	}
