@@ -1,0 +1,77 @@
+// stackimplementstion.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+int stack_size=10;
+int stack_pos=10;
+int stack[10]={0};
+int *stack_ptr=stack;
+
+void stack_disp();
+void stack_push(int input3); 
+void stack_pop(int input4);
+void stack_status();
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	stack_push(6);
+	stack_disp();
+	stack_push(8);
+	stack_status();
+	stack_pop(8);
+	stack_push(11);
+	stack_disp();
+	}
+
+
+
+void stack_init(int input1)
+{
+		for(int i=0;i<input1;i++)                                      
+		{
+			stack[i]=i;
+		}
+	}
+
+	void stack_disp()
+	{
+		printf("Position of the Stack:%d\n",stack_pos); 
+	}
+
+	void stack_push(int input3)     
+	{                                                                       
+		if((stack_pos<=(stack_size-1) | stack_pos>0))    
+		{
+			stack[stack_pos]=input3;
+			printf("The element recently  pushed in: %d\n",stack[stack_pos]);
+			stack_pos--;
+			stack_ptr--;
+		}
+		else
+			printf("stack Overflow\n");
+	}
+
+	void stack_pop(int input4)        
+	{
+		if (((stack_pos<(stack_size-1)) | (stack_pos>0)) || (stack_pos==0))
+		{   
+		stack_pos++;
+		printf("The element recently popped out: %d\n",stack[stack_pos]);
+		stack[stack_pos]=0;
+		stack_ptr++;
+		}
+		else
+			printf("The stack is empty\n");
+	}
+
+	void stack_status()                               
+	{
+		if(stack_pos<(stack_size-1) | stack_pos>0)
+			printf("There is space in stack\n");
+		if(stack_pos == (stack_size-1))
+			printf("The stack is empty\n");
+		if(stack_pos==0)
+			printf("stack Overflow\n");
+	}
+
