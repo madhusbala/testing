@@ -1,0 +1,58 @@
+// exercisefiles.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+/*int bar(int *p, int index)
+	{
+		p[index]=0x10;
+		printf("%x\n",p[index]);
+	}
+	int foo()
+	{
+		int p[5];
+		bar(p,5);
+		bar(p,6);
+	}
+int _tmain(int argc, _TCHAR* argv[])
+{
+foo();	
+*/
+
+
+/////////////EX 2////////
+#defineclrscr() 100
+ int main(int argc,char *argv[])
+{
+
+printf("%c\n",*&*p);
+ } 
+	/*
+
+
+	clrscr();
+	printf("%d\n",clrscr());
+
+static int a=5;
+printf("%d\n",a--);
+if(a)
+ main(int argc,char *argv[]);
+return 0;
+*/
+
+
+/*
+static char n[5][20]={"abcdegfg","fghijgfd","klmngfg","nfidjfidn","kdjjfjkdh"};
+char *t;
+t=n[3];
+n[3]=n[4];
+n[4]=t;
+for(int i=0;i<=4;i++)
+{
+	printf("%s",n[i]);
+}
+*/
+
+
+
+
