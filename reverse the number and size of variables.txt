@@ -1,0 +1,49 @@
+
+#include "stdafx.h"
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	//printf("Hello world/n");
+	//int a,b=0;
+
+	if(a=b)
+		printf("True\n");
+	else
+		printf("not true\n");
+		
+	int a,z,z1,z2,z3,z4,z5; char b; float c; double d; long double e; short f;
+	z=sizeof(a);printf("size of int is %d\n",z);
+	z1=sizeof(b);printf("size of char is %d\n",z1);
+	z2=sizeof(c);printf("size of float is %d\n",z2);
+	z3=sizeof(d);printf("size of double is %d\n",z3);
+	z4=sizeof(e);printf("size of long double is %d\n",z4);
+	z5=sizeof(f);printf("size of short is %d\n",z5);
+	
+
+
+	char c='5';char b;
+	b=(int)c;
+	printf("%d\n",b);
+}
+
+	//int a=112233;int num=a,rem,rev=0; num=a;
+	char c[6]="madam",rem,rev,num;num=c;
+//while(num!=0)
+while(num!='\0')
+{
+	rem=num%10;
+    rev=rev*10+rem;
+	num=num/10;
+}
+	if(rev==c)
+    printf("Its a palindrome\n");
+	else
+		printf("Its not a palindrome\n");
+
+
+	int d[3]={0,1,2};
+	printf("%d\n",d);
+	printf("%d\n",d+1);
+(d+3)=5;
+	//printf("%d\n",*(d+3));
