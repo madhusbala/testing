@@ -1,0 +1,23 @@
+// triangle_area.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "math.h"
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	float x1=15,y1=15,x2=23,y2=30,x3=50,y3=25;
+	float a,b,c,area;
+	a=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));printf("a=%f\n",a);
+	b=sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));printf("b=%f\n",b);
+    c=sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));printf("c=%f\n",c);
+	if(((a+b)>c)&&((b+c)>a)&&((a+c)>b))
+	{
+		area=((x1*(y2-y3))+(x2*(y3-y1))+(x3*(y1-y2)))/2;
+		printf("Area of the triangle:%f\n",area);
+	}
+	else
+		printf("Conditions are not satisfied\n");
+}
+
