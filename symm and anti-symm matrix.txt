@@ -1,0 +1,41 @@
+// symm.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+int trans(int a);
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	int a[3][3]={{1,-2,-3},{2,5,-8},{3,8,9}},trp[3][3];
+	int a[3][3]={{1,2,3},{2,5,8},{3,8,9}},trp[3][3];
+
+	printf("Transpose of the matrix - The resultant matrix is: \n");
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			trp[j][i]=a[i][j];			
+		}
+	}
+	int flag=0,flag1=0;
+	for(int i=0;i<3;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			printf("%d ",trp[i][j]);
+			if((trp[i][j])==(a[i][j]))
+				flag++;
+			if((trp[i][j])==(-a[i][j]))
+				flag1++;
+		}
+		printf("\n");
+	}
+	if(flag==9)
+		printf("Symmetric\n");
+	if((flag==3) && (flag1==6))
+		printf("AntiSymmetric\n");
+	
+
+
+	
