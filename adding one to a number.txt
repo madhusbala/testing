@@ -1,0 +1,26 @@
+// adding one.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	int a=139,l,num,temp=0,result,r;num=a;l=0;int ans[3];
+	printf("The given number is: %d \nThe result is:",a);
+	while(num!=0)
+	{
+		result=num%10;
+		r=(result+1);
+		if(r==10)
+			r=0;
+		ans[l]=r;
+		num=num/10;
+		l++;
+	}	
+	for(int k=l-1;k>=0;k--)
+	{
+		printf("%d",ans[k]);
+	}
+		}
+
