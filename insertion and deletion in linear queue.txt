@@ -1,0 +1,116 @@
+// insertanddelete.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+int _tmain(int argc, _TCHAR* argv[])
+{
+	
+	int c[50];
+	int temp=0,i,j,l=5,g=0,choice,ins_pos,ins_num,del_num,length;
+	printf("Enter the number of elements to be given:");
+	scanf("%d",&l);
+	printf("Enter the numbers:");
+	for(int h=0;h<l;h++)
+	{
+		scanf("%d",&c[h]);
+	}
+	length=l;
+	printf("Whether you need to insert/delete(1/2):");scanf("%d",&choice);
+	if(choice==1)
+	{
+		printf("Enter the position at which to be inserted:");scanf("%d",&ins_pos);
+		printf("Enter the number which to be inserted:");scanf("%d",&ins_num);
+		for(i=0;i<l;i++)
+			{
+				if(i==(ins_pos-1))
+				{
+					for(j=l+1;j>ins_pos-1;j--)
+					{
+						c[j]=c[j-1];
+					}
+					c[i]=ins_num;				
+				}
+			}
+		printf("The new array after insertion:");
+		for(int y=0;y<l+1;y++)
+		{
+		printf("%d\n",c[y]);
+		}
+	}
+	else if(choice==2)
+	{
+		printf("Enter the number to be deleted:");scanf("%d",&del_num);
+		for(i=0;i<l;i++)
+			{
+				if(c[i]==del_num)
+				{
+					for(j=i;j<l-1;j++)
+					{
+						c[j]=c[j+1];
+					}				
+				}
+			}
+		printf("The new array after deletion:");
+		for(int y=0;y<l-1;y++)
+		{
+		printf("%d\n",c[y]);
+		}
+	}
+	else
+		printf("Choose the appropriate number\n");
+	
+
+	//////////////////USING POINTERS///////////////
+	int c[50];
+	int temp=0,i,j,l=5,g=0,choice,ins_pos,ins_num,del_num,length;
+	printf("Enter the number of elements to be given:");
+	scanf("%d",&l);
+	printf("Enter the numbers:");
+	for(int h=0;h<l;h++)
+	{
+		scanf("%d",&c[h]);
+	}
+	printf("Whether you need to insert/delete(1/2):");scanf("%d",&choice);
+	if(choice==1)
+	{
+		printf("Enter the position at which to be inserted:");scanf("%d",&ins_pos);
+		printf("Enter the number which to be inserted:");scanf("%d",&ins_num);
+		for(i=0;i<l;i++)
+			{
+				if(i==(ins_pos-1))
+				{
+					for(j=l+1;j>ins_pos-1;j--)
+					{
+						*(c+j)=*(c+j-1);
+					}
+					*(c+i)=ins_num;				
+				}
+			}
+		printf("The new array after insertion:");
+		for(int y=0;y<l+1;y++)
+		{
+		printf("%d\n",*(c+y));
+		}
+	}
+	else if(choice==2)
+	{
+		printf("Enter the number to be deleted:");scanf("%d",&del_num);
+		for(i=0;i<l;i++)
+			{
+				if(c[i]==del_num)
+				{
+					for(j=i;j<l-1;j++)
+					{
+						*(c+j)=*(c+j+1);
+					}				
+				}
+			}
+		printf("The new array after deletion:");
+		for(int y=0;y<l-1;y++)
+		{
+		printf("%d\n",*(c+y));
+		}
+	}
+	else
+		printf("Choose the appropriate number\n");
+}
